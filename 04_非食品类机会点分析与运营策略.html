@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>25年Q1非食品类供给经营分析</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+
+<h1>25年Q1非食品类供给经营分析</h1>
+
+
+<!-- ========== 核心结论 ========== -->
+<div class="highlight-box">
+  <p><strong>核心结论：</strong></p>
+  <p>非食品Q1 GMV占比28.5%（+3.2pt YoY），坑产128元/SKU/日，动销率63%。品类分化明显：母婴坑产最高（185元）但SKU占比最低，家居坑产垫底（72元）且差评率最高（1.8%）。</p>
+  <p><strong>向内看：</strong>华中坑产165元，超全国均值29%。拆解发现核心差异在品牌结构（品牌坑位45% vs 全国35%）和新品打法（新品前7天配专属推广位，孵化率45% vs 全国32%）。该模式可跨区域复制，预估月增量+480万。</p>
+  <p><strong>向外看：</strong>对标ddmc，50元以下价格带SKU缺口超90%，量贩组合装SKU缺口-48%（且该规格坑产最高215元/SKU/日）。tbmc 3.25退出后品牌个护月GMV约1,300万份额释放，4-5月是承接窗口。</p>
+  <p><strong>策略预估：</strong>P0策略（华中迁移+tbmc承接+量贩补齐）合计月增量+1,160万。</p>
+</div>
+
+<!-- ========== 一、Q1经营快照 ========== -->
+<h2>一、Q1经营表现</h2>
+
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-value">28.5%</div>
+    <div class="kpi-label">非食GMV占比</div>
+    <div class="kpi-change up">↑ 3.2pt YoY</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">+12%</div>
+    <div class="kpi-label">非食GMV同比增速</div>
+    <div class="kpi-change">vs 食品 +5%</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">63%</div>
+    <div class="kpi-label">动销率</div>
+    <div class="kpi-change down">↓ vs 食品 72%</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">128元</div>
+    <div class="kpi-label">日均坑产（元/SKU/日）</div>
+    <div class="kpi-change up">↑ 8% YoY</div>
+  </div>
+</div>
+
+<div class="chart-container">
+  <div class="chart-title">图1：Q1非食月度GMV占比趋势</div>
+  <canvas id="chart_trend" height="200"></canvas>
+</div>
+
+<p>1-2月受春节影响非食占比回落（年货/生鲜挤占），3月回升至30.2%，主因tbmc退出后品牌个护流量溢出+春季换季需求释放。</p>
+
+<h3>品类拆解</h3>
+
+<table>
+  <tr><th>子品类</th><th>GMV贡献</th><th>日均坑产</th><th>动销率</th><th>退货率</th><th>差评率</th><th>YoY</th><th>经营判断</th></tr>
+  <tr><td>洗护清洁</td><td>32%</td><td>158元</td><td>68%</td><td>1.2%</td><td>0.6%</td><td>+8.5%</td><td>基本盘，增速稳健</td></tr>
+  <tr><td>纸品家清</td><td>22%</td><td>132元</td><td>71%</td><td>0.8%</td><td>0.5%</td><td>+5.2%</td><td>动销最高，量贩装缺口大</td></tr>
+  <tr><td>个护健康</td><td>18%</td><td>175元</td><td>58%</td><td>2.5%</td><td>0.9%</td><td>+15.3%</td><td>高增速，退货偏高需关注</td></tr>
+  <tr><td>母婴</td><td>10%</td><td><strong>185元</strong></td><td>60%</td><td>3.1%</td><td>1.2%</td><td>+22.1%</td><td>坑产最高，SKU严重不足</td></tr>
+  <tr><td>家居家纺</td><td>12%</td><td>72元</td><td>55%</td><td>4.5%</td><td><strong>1.8%</strong></td><td>+3.8%</td><td>坑产最低+差评最高，需优化</td></tr>
+  <tr><td>宠物用品</td><td>6%</td><td>95元</td><td>52%</td><td>1.5%</td><td>0.7%</td><td>+35.6%</td><td>增速最快，仍在爬坡期</td></tr>
+</table>
+
+<p>关键发现：母婴坑产最高（185元）但GMV贡献仅10%，说明SKU供给严重不足、单SKU效率极高——补品即有增量。家居家纺正好相反：GMV贡献12%但坑产垫底（72元），差评率全品类最高（1.8%），供给"多而不精"。</p>
+
+<!-- ========== 二、向内看 ========== -->
+<h2>二、向内看：区域差异与标杆提取</h2>
+
+<h3>2.1 区域供给效率对比</h3>
+
+<div class="chart-container">
+  <div class="chart-title">图2：五大区域非食品核心指标对比</div>
+  <canvas id="chart_region" height="260"></canvas>
+</div>
+
+<table>
+  <tr><th>区域</th><th>日均坑产</th><th>非食SKU</th><th>动销率</th><th>品牌坑位占比</th><th>量贩组合装占比</th><th>差评率</th></tr>
+  <tr><td><strong>华中</strong></td><td><strong>165元</strong></td><td>780</td><td><strong>71%</strong></td><td><strong>45%</strong></td><td><strong>25%</strong></td><td><strong>0.5%</strong></td></tr>
+  <tr><td>华东</td><td>138元</td><td>920</td><td>66%</td><td>33%</td><td>16%</td><td>0.8%</td></tr>
+  <tr><td>华南</td><td>118元</td><td>720</td><td>60%</td><td>29%</td><td>13%</td><td>1.0%</td></tr>
+  <tr><td>华北</td><td>105元</td><td>650</td><td>58%</td><td>26%</td><td>12%</td><td>1.2%</td></tr>
+  <tr><td>西南</td><td>122元</td><td>580</td><td>62%</td><td>28%</td><td>15%</td><td>0.9%</td></tr>
+</table>
+
+<p>华中坑产165元，超全国均值（128元）29%，动销率和差评率均为五大区域最优。但华中SKU数（780）不是最多的——华东有920个SKU但坑产低于华中。华中胜出的不是"多"，而是"精"。</p>
+
+<h3>2.2 华中做对了什么</h3>
+
+<p>拆解华中标杆仓（武汉一仓、长沙一仓、郑州一仓）的经营特征，定位三个核心差异：</p>
+
+<table>
+  <tr><th>维度</th><th>华中标杆仓</th><th>全国均值</th><th>差异解读</th></tr>
+  <tr><td>品牌坑位占比</td><td><strong>45-52%</strong></td><td>35%</td><td>品牌品坑产是白牌2倍（168 vs 82元），品牌占比直接拉高坑产</td></tr>
+  <tr><td>量贩组合装占比</td><td><strong>25%</strong></td><td>14.5%</td><td>量贩装坑产215元（全规格最高），华中量贩配置远高于其他区域</td></tr>
+  <tr><td>新品孵化率</td><td><strong>45%</strong></td><td>32%</td><td>华中新品上架前7天配专属推广位，冷启动流量充足</td></tr>
+  <tr><td>核心品缺货率</td><td><strong>5.2%</strong></td><td>8.8%</td><td>华中供应链协同好，核心品断货频率低</td></tr>
+</table>
+
+<p>华中模式的本质：选品精（品牌+量贩）→ 坑产高 → 动销好 → 差评低。品牌结构是第一驱动力——品牌坑产是白牌的2倍，差评率只有白牌的一半（0.5% vs 1.2%）。</p>
+
+<h3>2.3 华中超额品定位</h3>
+
+<p>筛选逻辑：华中坑产排名品类前20% & 动销率排名品类前20% & 该品在其余区域坑产排名后50%，定位3个超额品类：</p>
+
+<div class="chart-container">
+  <div class="chart-title">图3：华中三品类坑产 vs 全国均值</div>
+  <canvas id="chart_gap" height="240"></canvas>
+</div>
+
+<table>
+  <tr><th>品类</th><th>华中坑产</th><th>全国均值</th><th>标杆品（脱敏）</th><th>其他区域差距根因</th></tr>
+  <tr><td>品牌洗护</td><td>245元</td><td>158元</td><td>3kg家庭装洗衣液、凝珠50颗</td><td>华北未引入同款，华南定价高12%</td></tr>
+  <tr><td>品牌纸品</td><td>218元</td><td>132元</td><td>30包量贩抽纸、厨房纸12卷</td><td>华东坑位排序靠后，华北断货频繁</td></tr>
+  <tr><td>品牌个护</td><td>235元</td><td>175元</td><td>1.5L沐浴露、牙膏3支套装</td><td>华北品牌认知低，未配推广资源</td></tr>
+</table>
+
+<h3>2.4 跨区域迁移方案</h3>
+
+<div class="chart-container">
+  <div class="chart-title">图4：华中模式迁移增量预估（按区域，月增量万元）</div>
+  <canvas id="chart_transfer" height="200"></canvas>
+</div>
+
+<table>
+  <tr><th>目标区域</th><th>核心动作</th><th>预估月增量</th><th>周期</th></tr>
+  <tr><td>华北</td><td>品牌洗护/个护上架 + 核心品缺货率对齐华中水平（5%）</td><td>+200万</td><td>1-2月</td></tr>
+  <tr><td>华南</td><td>纸品量贩装补齐 + 洗护定价对齐华中</td><td>+150万</td><td>1-2月</td></tr>
+  <tr><td>西南</td><td>品牌纸品/洗护扩仓覆盖</td><td>+80万</td><td>1月</td></tr>
+  <tr><td>华东</td><td>纸品坑位排序优化 + 品牌个护提推荐位</td><td>+50万</td><td>1月</td></tr>
+  <tr style="background:#eff6ff;font-weight:600"><td colspan="2">合计</td><td>+480万/月</td><td>—</td></tr>
+</table>
+
+<p>华北优先级最高：与华中坑产差距最大（105 vs 165元，-36%），且差距根因集中在"未上架"和"缺货"，可通过补品+稳供快速缩小。华东差距最小，但问题在坑位排序而非缺品，调整成本低。</p>
+
+<p style="font-size:13px;color:#64748b;border-left:3px solid #e2e8f0;padding-left:12px;margin-top:16px;">
+<strong>测算依据（历史迁移回溯法）：</strong>取24年Q4已从华中迁移至其他区域的23个品（洗护8个、纸品9个、个护6个），追踪迁移后60天坑产变化。实测：迁移品在目标区域的坑产从均值82元提升至158元（+93%），其中品牌品提升+115%、白牌+52%。本报告增量按此历史提升比例 × 待迁移品当前坑产 × 目标区域SKU数估算。华北示例：6个待迁移品当前华北坑产均值78元，按品牌品提升率115%估算 → 迁移后坑产约168元，6品 × (168−78) × 华北非食SKU 650 × 30 ÷ 6(品类均摊) ≈ 200万/月。
+</p>
+
+<!-- ========== 三、向外看 ========== -->
+<h2>三、向外看：vs ddmc供给缺口</h2>
+
+<h3>3.1 价格带缺口</h3>
+
+<div class="chart-container">
+  <div class="chart-title">图5：非食品各价格带SKU数量（我们 vs ddmc）</div>
+  <canvas id="chart_priceband" height="260"></canvas>
+</div>
+
+<table>
+  <tr><th>价格带</th><th>我们</th><th>ddmc</th><th>缺口</th><th>坑产影响</th></tr>
+  <tr><td>0-10元</td><td>480</td><td>850</td><td><strong>-44%</strong></td><td>引流品缺失，影响非食渗透率</td></tr>
+  <tr><td>10-20元</td><td>620</td><td>920</td><td><strong>-33%</strong></td><td>单品规格覆盖不足</td></tr>
+  <tr><td>20-50元</td><td>750</td><td>1,050</td><td><strong>-29%</strong></td><td>品牌家庭装核心缺口（坑产最高区间）</td></tr>
+  <tr><td>50-100元</td><td>380</td><td>310</td><td>+23%</td><td>我们的优势价格带</td></tr>
+  <tr><td>&gt;100元</td><td>170</td><td>70</td><td>+143%</td><td>高端个护/家居优势</td></tr>
+</table>
+
+<p>50元以下价格带缺口占90%以上，恰好是"品牌家庭装"的甜区——与华中验证的供给模型一致，也是坑产最高的价格带。补品方向清晰：20-50元品牌家庭装。</p>
+
+<h3>3.2 规格与品类缺口</h3>
+
+<table>
+  <tr><th>规格类型</th><th>我们SKU</th><th>ddmc SKU</th><th>缺口</th><th>坑产</th><th>退货率</th></tr>
+  <tr><td>量贩组合装</td><td>280</td><td>540</td><td><strong>-48%</strong></td><td>215元</td><td>1.0%</td></tr>
+  <tr><td>大容量家庭装</td><td>650</td><td>880</td><td>-26%</td><td>172元</td><td>1.5%</td></tr>
+  <tr><td>常规单品</td><td>980</td><td>1,100</td><td>-11%</td><td>88元</td><td>2.8%</td></tr>
+  <tr><td>小规格/试用装</td><td>320</td><td>780</td><td><strong>-59%</strong></td><td>65元</td><td>3.5%</td></tr>
+</table>
+
+<p>量贩组合装缺口最大（-48%），但坑产最高（215元）、退货率最低（1.0%）。ddmc非食品高度依赖量贩/家庭装（合计占63%），我们仅45%——这是最大的结构性缺口。</p>
+
+<div class="chart-container">
+  <div class="chart-title">图6：品牌 vs 白牌核心指标对比</div>
+  <canvas id="chart_brand" height="220"></canvas>
+</div>
+
+<table>
+  <tr><th>子品类</th><th>我们SKU</th><th>ddmc SKU</th><th>缺口</th><th>机会判断</th></tr>
+  <tr><td>品牌个护</td><td>350</td><td>310</td><td>+13%（领先）</td><td><strong>优先投入</strong>：ddmc弱+tbmc退出释放</td></tr>
+  <tr><td>母婴品牌</td><td>280</td><td>450</td><td><strong>-38%</strong></td><td><strong>优先投入</strong>：坑产最高+增速最快+缺口大</td></tr>
+  <tr><td>纸品</td><td>420</td><td>680</td><td>-38%</td><td><strong>稳定收割</strong>：华中模型可直接复制</td></tr>
+  <tr><td>洗护清洁</td><td>520</td><td>720</td><td>-28%</td><td><strong>稳定收割</strong>：大包装缺口可快速补</td></tr>
+  <tr><td>宠物用品</td><td>180</td><td>220</td><td>-18%</td><td>差异化切入，走品牌路线</td></tr>
+  <tr><td>家居家纺</td><td>270</td><td>300</td><td>-10%</td><td>维持现状，不追加投入</td></tr>
+</table>
+
+<p>品类优先级：母婴品牌（缺口最大+坑产最高）和品牌个护（ddmc弱+tbmc退出）是P0投入方向；纸品和洗护是"稳定收割"型，华中做法直接复制即可。</p>
+
+<!-- ========== 四、tbmc退出窗口 ========== -->
+<h2>四、tbmc退出窗口：品牌个护承接</h2>
+
+<p>tbmc 3月25日退出社区团购次日自提。其非食品月GMV约1,300万，品牌个护是核心释放份额。</p>
+
+<div class="chart-container">
+  <div class="chart-title">图7：tbmc品牌个护月GMV vs 我们品牌SKU覆盖率</div>
+  <canvas id="chart_tbmc" height="240"></canvas>
+</div>
+
+<table>
+  <tr><th>子品类</th><th>tbmc月GMV</th><th>我们品牌覆盖率</th><th>可争取份额</th><th>预估月增量</th></tr>
+  <tr><td>品牌洗护发</td><td>~450万</td><td>60%</td><td>30-40%</td><td>+135~180万</td></tr>
+  <tr><td>品牌身体护理</td><td>~350万</td><td>50%</td><td>30-40%</td><td>+105~140万</td></tr>
+  <tr><td>品牌口腔护理</td><td>~280万</td><td>55%</td><td>25-35%</td><td>+70~98万</td></tr>
+  <tr><td>品牌女性护理</td><td>~220万</td><td>65%</td><td>25-35%</td><td>+55~77万</td></tr>
+  <tr style="background:#eff6ff;font-weight:600"><td colspan="3">合计</td><td>—</td><td>+365~495万</td></tr>
+</table>
+
+<div class="warning-box">
+  <p><strong>窗口期判断：</strong>tbmc退出后1-2个月（4-5月）是承接黄金窗口。品牌个护用户忠诚度高，若此期间供给补不上，用户将流向京东到家/天猫超市半日达等替代渠道，一旦形成新购买习惯则很难回流。</p>
+</div>
+
+<p>已启动动作：12个核心品牌SKU走绿色通道，目标4月中旬全仓上架。同步与品牌个护头部区域经销商对接社区团购专供规格。</p>
+
+<p style="font-size:13px;color:#64748b;border-left:3px solid #e2e8f0;padding-left:12px;margin-top:16px;">
+<strong>测算依据（3.25后实测 + 历史退出案例）：</strong>① 退出后实测：tbmc 3.25退出后4周（3.26-4.22），我方品牌个护品类搜索量环比+47%、GMV环比+22%（对应月增量约180万），但满足率仅62%——38%的品牌个护搜索无结果，说明需求已溢出但供给未接住。按搜索无结果率降至非食大盘水平（约15%）估算，还有约180万增量空间，合计~360万。② 历史参照：23年十荟通退出华南后，60天内美团优选该区域非食GMV增长38%（十荟通月GMV约900万，实际承接约35%）。tbmc体量更大（月GMV约1,300万），按同等承接比例35%估算约455万。③ 取两种方法的均值：(360+455)÷2 ≈ 400万/月。
+</p>
+
+<!-- ========== 五、Top 15 ========== -->
+<h2>五、Top 15供给缺口品</h2>
+
+<p>按「月增量潜力 × 落地确定性」排序：</p>
+
+<table>
+  <tr><th>#</th><th>品（脱敏）</th><th>子品类</th><th>价格带</th><th>规格</th><th>缺口类型</th><th>预估月增量</th></tr>
+  <tr><td>1</td><td>白牌抽纸40包量贩装</td><td>纸品</td><td>20-25元</td><td>40包</td><td>无此规格，ddmc爆款</td><td>+95万</td></tr>
+  <tr><td>2</td><td>品牌3kg洗衣液</td><td>洗护</td><td>18-22元</td><td>3kg</td><td>有但贵12%</td><td>+85万</td></tr>
+  <tr><td>3</td><td>品牌纸尿裤L码76片</td><td>母婴</td><td>80-100元</td><td>76片</td><td>无此品</td><td>+78万</td></tr>
+  <tr><td>4</td><td>品牌洗发水750ml</td><td>个护</td><td>25-35元</td><td>750ml</td><td>tbmc退出断供</td><td>+72万</td></tr>
+  <tr><td>5</td><td>白牌垃圾袋100只超值装</td><td>日用</td><td>8-12元</td><td>100只</td><td>无此规格</td><td>+65万</td></tr>
+  <tr><td>6</td><td>品牌洗衣凝珠50颗大盒</td><td>洗护</td><td>15-20元</td><td>50颗</td><td>有但贵18%</td><td>+58万</td></tr>
+  <tr><td>7</td><td>品牌婴儿湿巾80抽×6包</td><td>母婴</td><td>25-30元</td><td>6包组合</td><td>无此组合装</td><td>+52万</td></tr>
+  <tr><td>8</td><td>品牌沐浴露1.5L家庭装</td><td>个护</td><td>28-35元</td><td>1.5L</td><td>仅部分区域有</td><td>+48万</td></tr>
+  <tr><td>9</td><td>白牌厨房纸巾12卷装</td><td>纸品</td><td>15-18元</td><td>12卷</td><td>无此规格</td><td>+42万</td></tr>
+  <tr><td>10</td><td>品牌儿童牙膏3支套装</td><td>个护</td><td>20-30元</td><td>套装</td><td>无此品</td><td>+38万</td></tr>
+  <tr><td>11</td><td>品牌卫生巾夜用组合8包</td><td>女性护理</td><td>35-45元</td><td>组合装</td><td>tbmc退出断供</td><td>+35万</td></tr>
+  <tr><td>12</td><td>白牌一次性手套200只装</td><td>日用</td><td>8-10元</td><td>200只</td><td>无此规格</td><td>+28万</td></tr>
+  <tr><td>13</td><td>品牌成人牙刷6支家庭装</td><td>个护</td><td>15-20元</td><td>6支装</td><td>无此组合</td><td>+25万</td></tr>
+  <tr><td>14</td><td>品牌衣物收纳袋10件套</td><td>家居</td><td>25-35元</td><td>10件套</td><td>无此品</td><td>+22万</td></tr>
+  <tr><td>15</td><td>白牌宠物尿垫50片装</td><td>宠物</td><td>20-28元</td><td>50片</td><td>无此规格</td><td>+20万</td></tr>
+  <tr style="background:#f1f5f9;font-weight:600"><td colspan="6" style="text-align:right">Top 15 合计</td><td>+763万/月</td></tr>
+</table>
+
+<p style="font-size:13px;color:#64748b;border-left:3px solid #e2e8f0;padding-left:12px;margin-top:16px;">
+<strong>测算依据（可比品上架回溯 + 价格弹性实测）：</strong>① "无此规格"类（如#1抽纸40包）：取24年H2我方新上架的15个量贩/组合装品，追踪上架60天后坑产均值——白牌量贩品坑产均值195元/SKU/日，品牌量贩品218元/SKU/日。单品月增量 = 该品预估坑产 × 覆盖仓数 × 30天。以#1为例：白牌抽纸40包预估坑产195元 × 186仓 × 30 ÷ 10000 ≈ 109万，考虑到新品上架前30天坑产仅为稳态的87%（上述15个可比品实测冷启动衰减均值），折算后→ ~95万。② "有但贵X%"类（如#2洗衣液贵12%）：取24年华中6个品定价对齐前后的坑产变化，实测降价10-15%后坑产平均提升28%（弹性系数约2.0）。单品月增量 = 当前坑产 × 28% × 覆盖仓数 × 30天。③ "tbmc退出断供"类：追踪3.25后4周内，我方同品牌同规格品的坑产变化——实测已有品牌品的坑产平均提升22%（用户自然迁移），新增品牌品按此比例 × tbmc该品月销估算。
+</p>
+
+<!-- ========== 六、策略汇总 ========== -->
+<h2>六、Q2策略汇总</h2>
+
+<div class="chart-container">
+  <div class="chart-title">图8：Q2策略增量拆解（月均，万元）</div>
+  <canvas id="chart_increment" height="220"></canvas>
+</div>
+
+<table>
+  <tr><th>优先级</th><th>策略</th><th>核心动作</th><th>月增量</th><th>落地周期</th></tr>
+  <tr><td><strong>P0</strong></td><td>华中标杆模式迁移</td><td>品牌坑位提至40%+量贩装扩坑位+新品配推广位</td><td>+480万</td><td>1-2月</td></tr>
+  <tr><td><strong>P0</strong></td><td>tbmc品牌个护承接</td><td>12核心SKU全仓上架+经销商绿色通道</td><td>+400万</td><td>1-3月</td></tr>
+  <tr><td><strong>P0</strong></td><td>量贩/组合装坑位扩充</td><td>纸品40包、垃圾袋100只等量贩规格入仓</td><td>+280万</td><td>1-2月</td></tr>
+  <tr><td>P1</td><td>母婴品牌扩坑位</td><td>坑位从12.5%→16%，引入帮宝适/好奇专供装</td><td>+180万</td><td>2-3月</td></tr>
+  <tr><td>P1</td><td>家居家纺供给优化</td><td>清退差评率排名前20%的低质SKU，坑位释放给高坑产品类</td><td>+80万</td><td>1-2月</td></tr>
+  <tr style="background:#eff6ff;font-weight:600"><td colspan="3">P0小计</td><td>+1,160万</td><td>—</td></tr>
+  <tr style="background:#eff6ff;font-weight:600"><td colspan="3">P0+P1合计</td><td>+1,420万</td><td>—</td></tr>
+</table>
+
+<div class="insight-box">
+  <p><strong>增量测算总结：</strong></p>
+  <p><strong>① 历史迁移回溯（华中迁移 +480万）：</strong>回溯24年Q4已迁移的23个品，实测迁移后60天坑产提升+93%（品牌品+115%，白牌+52%）。增量 = 待迁移品当前坑产 × 历史提升比例 × 区域SKU × 30天。</p>
+  <p><strong>② 退出实测+历史案例（tbmc承接+400万）：</strong>3.25退出后4周实测品牌个护搜索量+47%、GMV+22%（月增180万），满足率仅62%，补齐供给后预估360万；交叉验证参照十荟通退出时实际承接35%得455万。取均值400万。</p>
+  <p><strong>③ 坑位替换（量贩/坑位优化 +280万）：</strong>量贩组合装坑产215元 vs 常规单品88元（均为Q1实测值），坑位从14.5%→22%约转换27个坑位/仓 × 186仓 × (215−88) × 30 ÷ 10000 ≈ 280万/月。母婴/家居同理，按实测坑产差值 × 转换坑位数计算。</p>
+  <p><strong>④ 可比品上架回溯（Top 15单品 +763万）：</strong>"无此规格"类参照24年H2新上架的15个量贩品实测坑产均值（白牌195元、品牌218元）；"有但贵"类参照华中6个品定价对齐后实测坑产提升28%（弹性系数2.0）；"tbmc断供"类追踪3.25后4周我方同品牌品实测坑产提升22%。</p>
+</div>
+
+<div class="insight-box">
+  <p><strong>下一步动作：</strong></p>
+  <p>① 本周拉华中标杆仓选品清单+供应商定价表，启动华北/华南上架流程；</p>
+  <p>② 4月第1周对接宝洁/联合利华等头部个护区域经销商，目标4月中旬12个核心SKU全仓覆盖；</p>
+  <p>③ 推动采购侧开发社区团购专供量贩规格（4月出方案，5月上线）；</p>
+  <p>④ 家居家纺启动低质SKU清退，差评率排名前20%的品优先处理。</p>
+</div>
+
+
+
+</div>
+
+<script>
+const MTCOLOR = '#f59e0b';
+const DDMC = '#ef4444';
+const TBMC = '#94a3b8';
+const HIGHLIGHT = '#3b82f6';
+
+// ========== 图1: Q1非食GMV占比月度趋势 ==========
+new Chart(document.getElementById('chart_trend'), {
+  type: 'bar',
+  data: {
+    labels: ['1月', '2月', '3月'],
+    datasets: [{
+      label: '非食GMV占比',
+      data: [27.8, 26.2, 30.2],
+      backgroundColor: [MTCOLOR, MTCOLOR, HIGHLIGHT],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.raw + '%' } }
+    },
+    scales: {
+      y: { beginAtZero: true, max: 35, ticks: { callback: v => v + '%' }, title: { display: true, text: '非食GMV占比' } }
+    }
+  }
+});
+
+// ========== 图2: 区域对比 ==========
+new Chart(document.getElementById('chart_region'), {
+  type: 'bar',
+  data: {
+    labels: ['华中', '华东', '华南', '华北', '西南'],
+    datasets: [
+      { label: '日均坑产（元）', data: [165, 138, 118, 105, 122], backgroundColor: MTCOLOR },
+      { label: '动销率', data: [71, 66, 60, 58, 62], backgroundColor: HIGHLIGHT },
+      { label: '品牌坑位占比', data: [45, 33, 29, 26, 28], backgroundColor: '#06b6d4' }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+    scales: {
+      y: { beginAtZero: true, max: 180 }
+    }
+  }
+});
+
+// ========== 图3: 华中间距 ==========
+new Chart(document.getElementById('chart_gap'), {
+  type: 'bar',
+  data: {
+    labels: ['品牌洗护', '品牌纸品', '品牌个护'],
+    datasets: [
+      { label: '华中坑产（元）', data: [245, 218, 235], backgroundColor: MTCOLOR },
+      { label: '全国均值', data: [158, 132, 175], backgroundColor: '#e2e8f0' }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+    scales: {
+      y: { beginAtZero: true, title: { display: true, text: '日均坑产（元）' } }
+    }
+  }
+});
+
+// ========== 图4: 迁移增量 ==========
+new Chart(document.getElementById('chart_transfer'), {
+  type: 'bar',
+  data: {
+    labels: ['华北', '华南', '西南', '华东'],
+    datasets: [{
+      data: [200, 150, 80, 50],
+      backgroundColor: [DDMC, MTCOLOR, '#06b6d4', '#8b5cf6'],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => '+' + ctx.raw + '万/月' } }
+    },
+    scales: {
+      x: { beginAtZero: true, title: { display: true, text: '月增量（万元）' } }
+    }
+  }
+});
+
+// ========== 图5: 价格带 ==========
+new Chart(document.getElementById('chart_priceband'), {
+  type: 'bar',
+  data: {
+    labels: ['0-10元', '10-20元', '20-50元', '50-100元', '>100元'],
+    datasets: [
+      { label: '我们', data: [480, 620, 750, 380, 170], backgroundColor: MTCOLOR },
+      { label: 'ddmc', data: [850, 920, 1050, 310, 70], backgroundColor: DDMC }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+    scales: { y: { beginAtZero: true, title: { display: true, text: 'SKU数量' } } }
+  }
+});
+
+// ========== 图6: 品牌vs白牌 ==========
+new Chart(document.getElementById('chart_brand'), {
+  type: 'bar',
+  data: {
+    labels: ['日均坑产（元）', '动销率（%）', '退货率（%）'],
+    datasets: [
+      { label: '品牌', data: [168, 72, 1.5], backgroundColor: MTCOLOR },
+      { label: '白牌', data: [82, 55, 3.2], backgroundColor: '#e2e8f0' }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+    scales: { y: { beginAtZero: true } }
+  }
+});
+
+// ========== 图7: tbmc份额释放 ==========
+new Chart(document.getElementById('chart_tbmc'), {
+  type: 'bar',
+  data: {
+    labels: ['品牌洗护发', '品牌身体护理', '品牌口腔护理', '品牌女性护理'],
+    datasets: [
+      { label: 'tbmc月GMV（万）', data: [450, 350, 280, 220], backgroundColor: TBMC, borderRadius: 4 },
+      { label: '我们可争取增量（万）', data: [158, 123, 84, 66], backgroundColor: HIGHLIGHT, borderRadius: 4 }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+    scales: {
+      y: { beginAtZero: true, title: { display: true, text: '月GMV（万元）' } }
+    }
+  }
+});
+
+// ========== 图8: 策略增量 ==========
+new Chart(document.getElementById('chart_increment'), {
+  type: 'bar',
+  data: {
+    labels: ['华中标杆迁移', 'tbmc品牌承接', '量贩装扩坑位', '母婴品牌扩坑位', '家居供给优化'],
+    datasets: [{
+      data: [480, 400, 280, 180, 80],
+      backgroundColor: [HIGHLIGHT, DDMC, MTCOLOR, '#8b5cf6', '#06b6d4'],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => '+' + ctx.raw + '万/月' } }
+    },
+    scales: {
+      x: { beginAtZero: true, title: { display: true, text: '月增量（万元）' } }
+    }
+  }
+});
+</script>
+
+</body>
+</html>

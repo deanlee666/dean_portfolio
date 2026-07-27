@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商业分析作品集 — 李鱼旺</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body { max-width: 800px; }
+  .hero { text-align: center; margin-bottom: 48px; }
+  .hero h1 { font-size: 32px; margin-bottom: 12px; }
+  .hero p { color: #64748b; font-size: 15px; }
+  .project-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    transition: box-shadow 0.2s;
+    background: #fff;
+  }
+  .project-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .project-card h2 {
+    margin-top: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    font-size: 18px;
+    color: #1e40af;
+  }
+  .project-card h2 a {
+    color: #1e40af;
+    text-decoration: none;
+  }
+  .project-card h2 a:hover {
+    text-decoration: underline;
+  }
+  .project-num {
+    font-size: 13px;
+    color: #94a3b8;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+  .project-desc {
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  .project-tags {
+    margin-top: 8px;
+  }
+  .capability {
+    margin-top: 40px;
+  }
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .cap-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 14px;
+  }
+  .cap-item strong {
+    display: block;
+    font-size: 13px;
+    color: #1e40af;
+    margin-bottom: 6px;
+  }
+  .note {
+    margin-top: 48px;
+    padding: 20px 24px;
+    background: #f8fafc;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>商业分析作品集</h1>
+  <p>李鱼旺 &nbsp;|&nbsp; 电商价格策略运营 × 商业分析</p>
+  <p style="margin-top:4px;">阿里天猫（价格力运营）+ 美团（社区团购品类运营）</p>
+</div>
+
+<div class="project-card">
+  <div class="project-num">PROJECT 01</div>
+  <h2><a href="01_618大促商家价格策略与促销效果复盘.html">618大促商家价格策略与促销效果综合复盘</a></h2>
+  <p class="project-desc">
+    基于DID双重差分方法，量化618巅峰价活动的真实提升效果（剥离日历效应），覆盖大家电/小家电/家装/家居四个行业 × H1-H4四个商家层级，输出分层运营策略建议。核心发现：大家电H1-H2的DID效应最强（坑产+24.3pt），但H4拖累整体指标；家居行业统一策略效果有限，需按细分品类差异化定价。
+  </p>
+  <div class="project-tags">
+    <span class="method-tag">DID双重差分</span>
+    <span class="method-tag">因果归因</span>
+    <span class="method-tag">分层分析</span>
+    <span class="method-tag">大促复盘</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="project-num">PROJECT 02</div>
+  <h2><a href="02_跟价运营动作与成交转化量化分析.html">跟价运营动作 → 成交转化量化分析</a></h2>
+  <p class="project-desc">
+    通过线性回归建模，量化各行业"跟价次数→成交增量"的弹性系数和相关性强度，为运营资源分配提供数据依据。同时验证跟价对高价率的压制效果有限，高价率与成交无线性关系，建议运营重心从"压高价率"转向"提升跟价→成交转化效率"。
+  </p>
+  <div class="project-tags">
+    <span class="method-tag">线性回归</span>
+    <span class="method-tag">相关性分析</span>
+    <span class="method-tag">运营ROI</span>
+    <span class="method-tag">数据驱动决策</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="project-num">PROJECT 03</div>
+  <h2><a href="03_国补政策对商家定价行为的影响分析.html">国补政策对商家定价行为的影响分析</a></h2>
+  <p class="project-desc">
+    分析国补（消费品以旧换新补贴）对参与商品价格的净效应，以及退出补贴后商家的涨价行为差异。发现三个行业呈现三种不同的涨价模式（大家电"高依赖涨价"、家装"等比回吐"、小家电"自行吸收"），并识别天猫家装新增商品的"先涨后补"风险信号。
+  </p>
+  <div class="project-tags">
+    <span class="method-tag">同比净效应</span>
+    <span class="method-tag">价格分布分析</span>
+    <span class="method-tag">政策评估</span>
+    <span class="method-tag">商家行为洞察</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="project-num">PROJECT 04</div>
+  <h2><a href="04_非食品类机会点分析与运营策略.html">25年Q1非食品类供给经营分析</a></h2>
+  <p class="project-desc">
+    非食品BP商分视角，结论先行、数据驱动的Q1供给经营诊断。向内看：区域坑产对比定位华中标杆（165元/SKU/日，+29% vs 均值），拆解品牌结构+量贩配置+新品打法三大差异根因，输出跨区域迁移方案（月增量+480万）。向外看：按价格带/规格/子品类三维度对标ddmc识别系统性缺口（量贩组合装-48%、20-50元品牌家庭装-29%），叠加tbmc 3.25退出品牌个护份额窗口（~1,300万/月），输出P0/P1分级策略清单。
+  </p>
+  <div class="project-tags">
+    <span class="method-tag">区域对标分析</span>
+    <span class="method-tag">坑产效率拆解</span>
+    <span class="method-tag">竞对缺口定位</span>
+    <span class="method-tag">tbmc退出窗口</span>
+  </div>
+</div>
+
+<div class="capability">
+  <h2 style="border-bottom:2px solid #e2e8f0;padding-bottom:8px;">能力图谱</h2>
+  <div class="capability-grid">
+    <div class="cap-item">
+      <strong>商业分析</strong>
+      大促效果评估、品类机会洞察、竞品对标分析、政策影响评估
+    </div>
+    <div class="cap-item">
+      <strong>数据方法</strong>
+      DID因果归因、线性回归建模、分层独立分析、价格分布分析
+    </div>
+    <div class="cap-item">
+      <strong>业务落地</strong>
+      分层运营策略、运营ROI评估、商家行为洞察、品类矩阵定位
+    </div>
+    <div class="cap-item">
+      <strong>数据工具</strong>
+      SQL（Hive）、Excel高级分析、Python（pandas/reportlab）、数据可视化
+    </div>
+    <div class="cap-item">
+      <strong>报告输出</strong>
+      独立撰写分析报告、方法论设计、结论论证、策略建议撰写
+    </div>
+    <div class="cap-item">
+      <strong>跨团队协同</strong>
+      运营×产品×商家多方协同、数据口径对接、需求文档撰写
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <p><strong>数据脱敏说明：</strong>本作品集所有数据均已脱敏处理。绝对值（GMV、件数等）按比例缩放，保留趋势方向和相对关系；百分比、比率、弹性系数等相对指标保持原貌。分析框架、方法论和结论逻辑均基于真实项目经验。</p>
+</div>
+
+<div class="footer">
+  <p>商业分析作品集 &nbsp;|&nbsp; 2025</p>
+</div>
+
+</body>
+</html>
