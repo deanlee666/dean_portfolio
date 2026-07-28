@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>618大促商家价格策略与促销效果综合复盘</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+<p class="meta">商业分析作品集 | 项目一</p>
+<h1>618大促商家价格策略与促销效果综合复盘</h1>
+<p class="meta">分析周期：2025.05.06 — 2025.06.21 &nbsp;|&nbsp; 覆盖行业：大家电 / 小家电 / 家装 / 家居</p>
+<p class="meta" style="margin-top:4px;">
+  <span class="method-tag">DID双重差分</span>
+  <span class="method-tag">分层独立分析</span>
+  <span class="method-tag">回归建模</span>
+  <span class="method-tag">因果归因</span>
+</p>
+
+<div class="highlight-box">
+  <p><strong>一句话结论：</strong>巅峰价活动确实在拉升坑产和转化，但效果被H4长尾商家严重稀释。大电H1-H2是主力引擎（DID效应+24.3pt），家装吃到了国补红利（跟价弹性2.04万/千次），家居整体拉胯（DID仅+8.4pt）。跨期对比看着热闹，不剥日历效应就是自嗨。下面拆到行业×层级说清楚哪里该加注、哪里该止血。</p>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-value">+18.3%</div>
+    <div class="kpi-label">整体成交增幅（vs去年618）</div>
+    <div class="kpi-change up">↑ 超去年持平线12.1pt</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">+24.3pt</div>
+    <div class="kpi-label">大电H1-H2 DID效应</div>
+    <div class="kpi-change up">↑ 巅峰价真实提升</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">2.04万</div>
+    <div class="kpi-label">家装跟价弹性系数</div>
+    <div class="kpi-change">每+1千跟价→成交+2.04万</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-value">4行业</div>
+    <div class="kpi-label">覆盖行业数</div>
+    <div class="kpi-change">×4层级 共16个分析单元</div>
+  </div>
+</div>
+
+<h2>一、复盘背景</h2>
+
+<p>618打完了，该盘一盘账了。这次大促从5月6号蓄水到6月21号返场，历经蓄水→预售→开门红→品类日→爆发→返场六个阶段，覆盖大家电、小家电、家装、家居四个行业。平台今年主打"巅峰价"活动，核心逻辑是引导商家在爆发期让价，换坑产和转化。</p>
+
+<p>但这里有个坑：爆发期正好卡在618正日子，消费者本来就集中下单，所以跨期对比（比如"巅峰期比开门红涨了35%"）看着漂亮，其实混了大量日历效应——你分不清是活动拉的还是日子带的。另外四个行业、四个商家层级（H1-H4）打法完全不一样，整体指标一拉平容易掩盖真实的分层表现。所以这次复盘的核心就三件事：巅峰价到底拉了多少真实增量、哪个行业×层级是主力引擎、下一步运营资源往哪投。</p>
+
+<h2>二、怎么看数据的</h2>
+
+<h3>2.1 用DID剥日历效应</h3>
+
+<p>直接跨期对比不靠谱，因为巅峰期商品和非巅峰价商品都经历了618正日子的流量高峰。做法是拿非巅峰价商品当对照组——两组都吃到了日历红利，差值就是巅峰价活动的净效应。说白了：巅峰价商品涨了30%，非巅峰价商品也涨了10%，那巅峰价的真实贡献就是20pt左右。</p>
+
+<div class="highlight-box">
+  <p><strong>DID核心逻辑：</strong>活动净效应 = 巅峰价商品的跨期变化 − 非巅峰价商品的跨期变化</p>
+  <p style="font-size:13px;color:#475569;margin-top:8px;">一个前提：报名巅峰价的商家本身运营更积极，存在选择偏差。所以DID差分值说的是"参与商品比未参与商品多涨了多少"，不等于"活动凭空带来了X亿增量"。这个颗粒度要拉清楚。</p>
+</div>
+
+<h3>2.2 分层看，别拉平</h3>
+
+<p>四个行业、四个层级（H1头部→H4长尾），商品池完全不同，结论必须独立下，不能交叉引用。比如家居整体增幅+14.7%，不代表家居H2也一般，得单独看。整体数据和分层数据打架的时候，拆到子层级找原因，别拿整体数据糊弄。</p>
+
+<h3>2.3 几个核心指标口径</h3>
+
+<table>
+  <tr><th>指标</th><th>定义</th><th>分析用途</th></tr>
+  <tr><td>坑产</td><td>单品日均成交额（万元）</td><td>衡量单品变现效率</td></tr>
+  <tr><td>IPV价值</td><td>GMV ÷ IPV（元/次浏览）</td><td>衡量转化效率（非客单价）</td></tr>
+  <tr><td>高价率</td><td>价格高于竞品的商品占比</td><td>衡量价格竞争力</td></tr>
+  <tr><td>跟价数</td><td>运营小二推动商家调价的次数</td><td>衡量运营动作强度</td></tr>
+  <tr><td>巅峰价/非巅峰价</td><td>是否报名巅峰价活动</td><td>处理组/对照组划分依据</td></tr>
+</table>
+
+<p>这里要拉齐一个认知：IPV价值涨了不代表客单价拉升了，它反映的是"价格更有竞争力→用户下单更果断→每次浏览带来的成交更多"。另外件数涨了也别急着高兴，大促凑单满减拉高件数是常态（凑完退的比例不低），在没有退款率数据的情况下，别拿件数当增量质量的指标。</p>
+
+<h2>三、跨期对比：表面看着热闹</h2>
+
+<p class="section-intro">先看开门红→巅峰期的跨期变化，心里有个数，但这组数据混着日历效应，别直接当活动效果用。</p>
+
+<div class="chart-container">
+  <div class="chart-title">图1：开门红→巅峰期核心指标变化（含日历效应，别当真）</div>
+  <canvas id="chart1" height="280"></canvas>
+</div>
+
+<p>四个行业在巅峰期成交都涨了：大家电+31.2%、小家电+28.7%、家装+25.4%、家居+22.8%。但这到底有多少是巅峰价拉出来的，多少是618正日子自带的，得往下剥。直接拿这组数据汇报就是给自己挖坑。</p>
+
+<div class="warning-box">
+  <p><strong>提醒：</strong>上面这组增幅里日历效应占大头（爆发期撞上618正日子），巅峰价的真实贡献看下面DID。</p>
+</div>
+
+<h2>四、DID拆解：巅峰价到底拉了多少</h2>
+
+<p class="section-intro">剥掉日历效应后的净效应，这才是巅峰价活动的真实成绩单。</p>
+
+<div class="chart-container">
+  <div class="chart-title">图2：巅峰价DID分析 — 各行业坑产与IPV价值效应（单位：pt）</div>
+  <canvas id="chart2" height="300"></canvas>
+</div>
+
+<p>DID拆开来看，四个行业差距很大：</p>
+
+<p><strong>大家电</strong>坑产DID +24.3pt，四个行业里最能打。核心抓手是国补叠加巅峰价形成双重让利，消费者决策链路短、价格敏感，两个优惠叠在一起杀伤力很强。IPV价值DID +18.7pt，说明价格打下来之后转化确实跟着走。但大电内部H层级分化严重，H4基本没参与，拖了后腿（后面分层细拆）。</p>
+
+<p><strong>家装</strong>坑产DID +19.6pt，排第二。但家装国补覆盖率本身就高（约60%），巅峰价有多少独立贡献还得再拆。不过从跟价弹性看（后面有数据），家装是四个行业里最高的，说明运营推一把就能出量。</p>
+
+<p><strong>小家电</strong>坑产DID +15.8pt，中规中矩。小家电客单价低，消费者对几块十几块的优惠感知强，巅峰价在这个品类的心智渗透是OK的。IPV价值DID +12.3pt，转化有改善。</p>
+
+<p><strong>家居</strong>坑产DID +8.4pt，IPV价值DID +5.1pt，四个行业垫底。家居SKU太散、价格带跨度大，一套统一的巅峰价机制覆盖不了所有品类，需要按细分赛道（灯具、卫浴、家纺）分别设计打法。</p>
+
+<div class="insight-box">
+  <p><strong>小结：</strong>大电和家装是巅峰价的主力阵地，小家电是稳定贡献者，家居需要换打法。DID说的是"参与商品比没参与的多涨了多少"，不代表活动凭空造了多少增量——报名商家本身就运营更积极，这个选择偏差是客观存在的。</p>
+</div>
+
+<h2>五、跟价运营：推了多少，出了多少量</h2>
+
+<p class="section-intro">高价率看问题（越高说明价格竞争力越差），跟价看动作（小二推了多少），成交看结果。三个指标串起来看运营的ROI。</p>
+
+<h3>5.1 高价率走势：运营推着走，不是拉下来的</h3>
+
+<div class="chart-container">
+  <div class="chart-title">图3：618各阶段各行业高价率变化趋势</div>
+  <canvas id="chart3" height="280"></canvas>
+</div>
+
+<p>从趋势看，蓄水→预售阶段四个行业高价率都在涨（大促期间新品涌入、竞品调价，高价商品自然增多）。进入开门红后开始分化：大电和小家电在爆发期高价率回落了，说明小二跟价力度到位；家装和家居的高价率到爆发期还在高位挂着，跟价动作没压住。</p>
+
+<p>一个关键发现：<strong>死磕高价率意义不大</strong>。高价率和成交之间几乎没有线性关系（各行业相关系数均低于0.15），说明单纯把高价率压下来并不会直接拉成交。大促期间高价商品一直在涌入，跟价动作是"推着走"而不是"拉下来"——你推一步它动一步，停下来它又涨回去。所以运营重心不该放在"压高价率"上，而应该聚焦在"跟了价之后到底出了多少量"。</p>
+
+<h3>5.2 跟价弹性：推一把能出多少量</h3>
+
+<div class="chart-container">
+  <div class="chart-title">图4：各行业跟价→成交回归分析（每+1千次跟价对应的成交增量，万元）</div>
+  <canvas id="chart4" height="260"></canvas>
+</div>
+
+<table>
+  <tr><th>行业</th><th>弹性系数（万元/千次）</th><th>相关系数 r</th><th>解读</th></tr>
+  <tr><td>大家电</td><td>1.02</td><td>0.68</td><td>正相关中等偏强，跟价→成交传导通畅</td></tr>
+  <tr><td>小家电</td><td>1.16</td><td>0.65</td><td>弹性略高于大电，价格敏感度高</td></tr>
+  <tr><td>家装</td><td>2.04</td><td>0.67</td><td>弹性最高，国补叠加效应放大跟价效果</td></tr>
+  <tr><td>家居</td><td>0.99</td><td>0.48</td><td>弹性最低，相关系数偏弱，传导链路受阻</td></tr>
+</table>
+
+<p>这张表基本就是运营资源投放的优先级排序。家装弹性最高（2.04万/千次），因为国补叠跟价形成了双重让利，消费者感知强，小二每多推一把就能多出一截量——这个行业值得加人加动作。小家电弹性1.16万，性价比也不错。大电1.02万，弹性不算高但本身坑产基数大，绝对值贡献还是很可观。家居0.99万，相关系数只有0.48，说明跟价到成交的传导链路不顺畅——可能跟家居决策周期长、SKU分散有关，光靠推价格不够，得搭配场景化运营。</p>
+
+<p><strong>运营建议：</strong>把跟价资源往高弹性行业倾斜（家装>小家电>大电），家居不要死磕跟价数量，换思路（比如场景搭配、组合优惠）。</p>
+
+<h2>六、拆到层级看：H1到H4谁在拉谁在拖</h2>
+
+<p class="section-intro">各行业按商家规模分H1（头部）到H4（长尾），各层级商品池不同，结论独立下。</p>
+
+<h3>6.1 大家电</h3>
+
+<table>
+  <tr><th>层级</th><th>坑产增幅</th><th>IPV价值增幅</th><th>成交增幅</th><th>核心特征</th></tr>
+  <tr><td>H1（头部）</td><td>+22.3%</td><td>+18.5%</td><td>+28.6%</td><td>国补+巅峰价双重利好，表现最强</td></tr>
+  <tr><td>H2</td><td>+18.7%</td><td>+15.2%</td><td>+23.1%</td><td>巅峰价参与度较高，效应明显</td></tr>
+  <tr><td>H3</td><td>+12.4%</td><td>+9.8%</td><td>+16.5%</td><td>中等参与度，效应温和</td></tr>
+  <tr><td>H4（长尾）</td><td>+3.1%</td><td>+2.3%</td><td>+5.8%</td><td>参与度低，拖累整体指标</td></tr>
+</table>
+
+<p>大电的故事很清楚：H1-H3都在吃巅峰价红利，H4完全没跟上。H1最强（坑产+22.3%）是因为国补+巅峰价双重利好，头部商家供给充足，两个优惠叠在一起消费者买单意愿很强。H4的坑产增幅只有+3.1%，商品数占比又不低，直接把行业整体数据拖下来了。如果只看H1-H3，大电的巅峰价效果是相当好的。所以汇报大电数据时一定要拆层级，别被整体指标误导。</p>
+
+<h3>6.2 小家电</h3>
+
+<table>
+  <tr><th>层级</th><th>坑产增幅</th><th>IPV价值增幅</th><th>成交增幅</th><th>核心特征</th></tr>
+  <tr><td>H1</td><td>+16.8%</td><td>+14.2%</td><td>+22.5%</td><td>表现稳健，巅峰价效应正向</td></tr>
+  <tr><td>H2</td><td>+19.5%</td><td>+16.1%</td><td>+25.8%</td><td>巅峰价效应最强层级</td></tr>
+  <tr><td>H3</td><td>+11.3%</td><td>+8.7%</td><td>+14.2%</td><td>效应中等</td></tr>
+  <tr><td>H4</td><td>+5.6%</td><td>+3.9%</td><td>+8.1%</td><td>参与度不足，效应偏弱</td></tr>
+</table>
+
+<p>小家电有个有意思的点：H2的巅峰价效应（坑产+19.5%）超过了H1（+16.8%）。原因是H1头部本身价格竞争力就强，巅峰价对它来说是锦上添花，边际效应有限；H2腰部商家价格力差一些，巅峰价帮它们把价格打到了消费者心理阈值以下，效果反而更明显。运营启示很明确：小家电的巅峰价招商重心应该放在H2而不是H1。H4还是老问题，+5.6%，参与度不足。</p>
+
+<h3>6.3 家装</h3>
+
+<table>
+  <tr><th>层级</th><th>坑产增幅</th><th>IPV价值增幅</th><th>成交增幅</th><th>核心特征</th></tr>
+  <tr><td>H1</td><td>+28.5%</td><td>+22.1%</td><td>+32.4%</td><td>国补叠加巅峰价效果最佳</td></tr>
+  <tr><td>H2</td><td>+21.3%</td><td>+17.6%</td><td>+25.8%</td><td>效应明显</td></tr>
+  <tr><td>H3</td><td>+14.7%</td><td>+11.2%</td><td>+18.3%</td><td>中等水平</td></tr>
+  <tr><td>H4</td><td>+4.2%</td><td>+3.1%</td><td>+6.5%</td><td>参与度极低</td></tr>
+</table>
+
+<p>家装H1是四个行业所有层级里坑产增幅最高的（+28.5%），国补覆盖率在家装H1中最高，叠加巅峰价就是"双重优惠"杀手锏。H2也还行（+21.3%），家装整体是巅峰价的受益行业。但H4只有+4.2%，跟大电H4一样，参与度极低。家装接下来的重点不是继续加码H1（已经到顶了），而是想办法把H3-H4拉进来——可以降门槛，比如只需部分核心SKU报名巅峰价就算参与。</p>
+
+<h3>6.4 家居</h3>
+
+<table>
+  <tr><th>层级</th><th>坑产增幅</th><th>IPV价值增幅</th><th>成交增幅</th><th>核心特征</th></tr>
+  <tr><td>H1</td><td>+11.2%</td><td>+8.5%</td><td>+15.3%</td><td>正向但幅度温和</td></tr>
+  <tr><td>H2</td><td>+13.5%</td><td>+10.2%</td><td>+17.8%</td><td>效应略强于H1</td></tr>
+  <tr><td>H3</td><td>+8.7%</td><td>+6.3%</td><td>+11.2%</td><td>效应偏弱</td></tr>
+  <tr><td>H4</td><td>+2.8%</td><td>+1.9%</td><td>+4.5%</td><td>参与度低，明显拖累</td></tr>
+</table>
+
+<p>家居四个层级都是四行业里最弱的，最好的H2（+13.5%）放到其他行业也就中等水平。根因在于家居品类太杂——灯具、卫浴、家纺、家具价格带和决策逻辑完全不同，一套统一的巅峰价机制打不透。H2略强于H1可能跟H2商家更愿意配合活动有关，但效应也不大。家居行业下一步要换打法：别搞一刀切的巅峰价，按细分品类分别设计价格引导策略（比如灯具走套装优惠、家纺走满减、卫浴走安装服务包），得在供给侧拆得更细。</p>
+
+<h2>七、So What：下一步怎么干</h2>
+
+<h3>7.1 巅峰价效果定性</h3>
+
+<p>巅峰价是个有效的活动抓手，但效果不均匀。大电H1-H2和家装H1是主力引擎，小家电H2是黑马，家居全层级都需要换打法。H4在所有行业都是拖累项。一句话总结：巅峰价的ROI在头部层级和腰部层级是OK的，在长尾层级跑不通。</p>
+
+<h3>7.2 分行业打法建议</h3>
+
+<p><strong>大家电——守住H1-H2，激活H3：</strong>头部商家"国补+巅峰价"的打法已经跑通，继续保持就好。重点放在H3的渗透上，H3目前参与度中等，但效应（坑产+12.4%）说明只要参与就能出量，差的就是招商覆盖。H4不用硬拉，投入产出比太低，建议评估是否降低H4的运营权重，把资源挪到H3。</p>
+
+<p><strong>小家电——重仓H2：</strong>这次618验证了H2才是巅峰价效应最强的层级（坑产+19.5%），比H1还高。运营资源从H1往H2倾斜，H1本身价格力就够，不需要巅峰价加持。H2的招商和跟价力度可以同时加。</p>
+
+<p><strong>家装——加码H3-H4的参与门槛设计：</strong>H1已经打满了（坑产+28.5%），继续加码边际效益递减。关键是H3-H4的参与率太低。建议做阶梯式参与机制——不需要全店所有SKU都报巅峰价，核心爆款报名即可参与活动，降低参与门槛。</p>
+
+<p><strong>家居——拆品类分别打：</strong>一刀切的巅峰价在家居跑不通。建议按细分品类（灯具/卫浴/家纺/家具）分别设计价格引导方案：灯具适合套装组合优惠，家纺适合满减机制，卫浴可以走安装服务包（消费者更在意服务而不是纯价格），家具走分期免息。供给侧拆得越细，效果越好。</p>
+
+<h3>7.3 运营机制层面</h3>
+
+<p><strong>别再拿跨期对比当活动效果了：</strong>这次618爆发期撞上正日子，日历效应占比非常大。后续大促复盘建议统一用DID方法剥日历效应，不然每次汇报都是"巅峰期比开门红涨了XX%"，其实一半以上是日子带的，跟活动没关系。</p>
+
+<p><strong>跟价资源按弹性分配：</strong>家装弹性2.04万/千次 > 小家电1.16万 > 大电1.02万 > 家居0.99万。跟价动作的ROI差异接近一倍，运营资源应该跟着弹性走，别平均分配。家居的跟价投入可以缩减，换成场景化运营。</p>
+
+<p><strong>H4统一止血：</strong>四个行业的H4都跑不动，DID效应在+2.8%到+5.6%之间，投入大量运营人力去推效果不明显。建议两个方向：一是大幅降低H4的运营权重（减少跟价任务量），把人力释放给H1-H3；二是如果一定要拉H4，就走轻量化方案（自动化工具推送，不依赖小二人工跟价）。汇报时一定要拆层级呈现，别让H4把整体数据拖成"活动效果一般"的结论。</p>
+
+<div class="footer">
+  <p>本报告为商业分析作品集展示，数据已脱敏处理（绝对值等比缩放，趋势与相对关系保持原貌）</p>
+</div>
+
+<script>
+// Chart 1: 跨期对比
+new Chart(document.getElementById('chart1'), {
+  type: 'bar',
+  data: {
+    labels: ['大家电', '小家电', '家装', '家居'],
+    datasets: [
+      { label: '坑产增幅', data: [31.2, 28.7, 25.4, 22.8], backgroundColor: '#3b82f6' },
+      { label: 'IPV价值增幅', data: [25.8, 23.1, 20.5, 17.3], backgroundColor: '#06b6d4' },
+      { label: '成交增幅', data: [28.5, 26.2, 24.1, 19.6], backgroundColor: '#8b5cf6' }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'top', labels: { font: { size: 12 } } },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': +' + ctx.raw + '%' } }
+    },
+    scales: {
+      y: { beginAtZero: true, ticks: { callback: v => '+' + v + '%' }, title: { display: true, text: '增幅（%）' } }
+    }
+  }
+});
+
+// Chart 2: DID分析
+new Chart(document.getElementById('chart2'), {
+  type: 'bar',
+  data: {
+    labels: ['大家电', '小家电', '家装', '家居'],
+    datasets: [
+      { label: '坑产DID效应', data: [24.3, 15.8, 19.6, 8.4], backgroundColor: '#3b82f6' },
+      { label: 'IPV价值DID效应', data: [18.7, 12.3, 14.5, 5.1], backgroundColor: '#06b6d4' }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'top' },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': +' + ctx.raw + 'pt' } }
+    },
+    scales: {
+      y: { beginAtZero: true, ticks: { callback: v => '+' + v + 'pt' }, title: { display: true, text: 'DID效应（pt）' } }
+    }
+  }
+});
+
+// Chart 3: 高价率趋势
+new Chart(document.getElementById('chart3'), {
+  type: 'line',
+  data: {
+    labels: ['蓄水期', '预售期', '开门红', '品类日', '爆发期', '返场期'],
+    datasets: [
+      { label: '大家电', data: [18.5, 22.3, 20.1, 19.8, 17.2, 19.5], borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.08)', fill: true, tension: 0.4 },
+      { label: '小家电', data: [15.2, 19.8, 17.5, 16.9, 14.8, 16.2], borderColor: '#06b6d4', backgroundColor: 'rgba(6,182,212,0.08)', fill: true, tension: 0.4 },
+      { label: '家装', data: [22.1, 27.5, 25.3, 24.8, 23.6, 25.8], borderColor: '#8b5cf6', backgroundColor: 'rgba(139,92,246,0.08)', fill: true, tension: 0.4 },
+      { label: '家居', data: [20.3, 25.1, 23.8, 22.5, 21.7, 23.2], borderColor: '#f59e0b', backgroundColor: 'rgba(245,158,11,0.08)', fill: true, tension: 0.4 }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { position: 'top' },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.raw + '%' } }
+    },
+    scales: {
+      y: { ticks: { callback: v => v + '%' }, title: { display: true, text: '高价率（%）' } }
+    }
+  }
+});
+
+// Chart 4: 跟价弹性系数
+new Chart(document.getElementById('chart4'), {
+  type: 'bar',
+  data: {
+    labels: ['大家电', '小家电', '家装', '家居'],
+    datasets: [{
+      label: '弹性系数（万元/千次跟价）',
+      data: [1.02, 1.16, 2.04, 0.99],
+      backgroundColor: ['#3b82f6', '#06b6d4', '#8b5cf6', '#f59e0b'],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    responsive: true,
+    indexAxis: 'y',
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => '弹性系数: ' + ctx.raw + '万元/千次' } }
+    },
+    scales: {
+      x: { beginAtZero: true, title: { display: true, text: '万元/千次跟价' } }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
